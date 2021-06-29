@@ -3,38 +3,43 @@ import { Link } from "gatsby"
 import { LinkedInRounded } from "../../assets/icons/LinkedInRounded"
 import { GithubRounded } from "../../assets/icons/GithubRounded"
 import { SpotifyRounded } from "../../assets/icons/SpotifyRounded"
+import { Banner, Nav, Socials, StyledHeader } from "./styled-components"
 
 export const Header: React.FC = () => {
   const items = [
     {
       to: "#work",
-      label: "my work",
+      label: "my work"
     },
     {
       to: "#technologies",
-      label: "technologies",
+      label: "technologies"
     },
     {
       to: "#contact",
-      label: "contact",
-    },
+      label: "contact"
+    }
   ]
 
   return (
-    <header>
-      <Link to={"/"}>Juan Albergen Personal portfolio</Link>
-      <menu>
+    <StyledHeader>
+      <Banner>
+        {/*<span>*/}
+        {/*<Link to={"/"}>Juan Albergen {"\n"} Personal portfolio</Link>*/}
+        {/*  </span>*/}
+      </Banner>
+      <Socials>
         <Link to={"/"}>
-          <LinkedInRounded/>
+          <LinkedInRounded />
         </Link>
         <Link to={"/"}>
-          <GithubRounded/>
+          <GithubRounded />
         </Link>
         <Link to={"/"}>
-          <SpotifyRounded/>
+          <SpotifyRounded />
         </Link>
-      </menu>
-      <nav>
+      </Socials>
+      <Nav>
         <ul>
           {items.map(item => {
             return (
@@ -44,7 +49,7 @@ export const Header: React.FC = () => {
             )
           })}
         </ul>
-      </nav>
-    </header>
+      </Nav>
+    </StyledHeader>
   )
 }

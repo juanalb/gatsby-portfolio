@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import GatsbySeo from "../components/gatsby-seo/gatsby-seo"
-import { Header } from "../components/header/header"
+import { Header } from "../components/header/layout"
 
 const NotFoundPage = () => (
   <div className={"page-wrapper"}>
