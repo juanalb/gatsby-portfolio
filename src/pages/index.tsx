@@ -1,29 +1,25 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { PageProps } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import GatsbySeo from "../components/gatsby-seo/gatsby-seo"
+import { Landing } from "../components/page-sections/landing"
+import { Work } from "../components/page-sections/work"
+import { Header } from "../components/header/header"
+import "../stylesheet.css"
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
+type DataProps = {}
+
+const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path, children }) => (
+  <div className={"page-wrapper"}>
+    <GatsbySeo title="Portfolio of Juan Albergen, Front-end developer - Software engineer" />
+
+    <Header />
+    <main>
+      <Landing />
+      <Work />
+    </main>
+    <footer />
+  </div>
 )
 
 export default IndexPage
